@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+background: #f5f5f5;
+}
+
+.hero{
+    height: 90vh;
+    margin: auto;
+    position: relative;
+
+    background-image: url('ratbu.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-text{
+    background: rgba(206, 200, 200, 0.7);
+    border-radius: 5px;
+    padding: 25px;
+    position: absolute;
+    padding: 2vw;
+    bottom: 10%;
+    left: 25%;
+    max-width: 50%;
+}
+.hero-text h1{
+    font-size: clamp(14px, 1.2vw, 30px);
+    margin-top: 10px;
+}
+.places{
+    padding:40px;
+    text-align: center;
+    
+}
+p{
+    text-align: center;
+    margin-top: 20px;
+}
+@media (max-width :768px) {
+    .hero{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 60vh;
+        padding-left: 40px;  
+    }
+    p{
+    text-align: center;
+    margin-top: 20px;
+}
+.hero-text{
+    bottom: 8%;
+        left: 8%;
+        max-width: 75%;
+}
+    .hero-text h1{
+        font-size: 3.5vw;
+        
+    }
+}
+@media (max-width: 480px){
+.hero{
+    height: 60vh;
+    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.hero-text{
+    padding: 20px;
+    bottom: 5%;
+    left: 5%;
+    position: static;
+}
+p{
+    text-align: center;
+    margin-top: 20px;
+}
+.places{
+    padding: 60px;
+    font-size: 20px; 
+}
+.hero-text h1{
+    font-size: 4.5vw;
+}
+}
+
+.gallery{
+    padding: 70px;
+}
+
+.image-row{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+.image-row img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.modal{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal img{
+max-width:80%;
+max-height:80%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+footer{
+text-align: center;
+margin-top: 20px;
+}
+
+
+.gallery h3{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to my personal website where you can learn more about me.</h1>
+        </div>
+    </section>
+ <br>
+    <section class="places">
+        <h2 style="text-align: center;">ABOUT ME</h2>
+        <p style="font-size: 20px;">Hi! I am Curt Andrie P. Macasinag. A student of URS who loves technology, gaming, sketching, cooking, dogs and cats. <br> I also enjoy learning website programming and computer hardware.</p>
+    </section>
+<br>
+    <section class="tings" style="margin-top: 20px;">
+        <h3 style="text-align: center;">HOBBIES</h3>
+        <p style="font-size: 20px;">My hobbies are playing league of legends and valorant and sometimes i watch anime.</p>
+    </section>
+
+    <section class="gallery">
+<div class="image-row">
+    <img src="ace.jpg" onclick="openModal(this)">
+    <img src="lolimg.jpg" onclick="openModal(this)">
+    <img src="rank.jpg" onclick="openModal(this)">
+</div>
+<br>
+<br>
+       <p style="font-size: 20px; margin-top: 50px;">I have pets, so i wanted to show you guys my dog and cat. My dog's name is doberman because my dog is so big and large,<br>
+        while my cat's name is brownie. I named him brownie because i like white.</p>
+         <br>
+<div class="image-row">
+    <img src="dog.jpg" onclick="openModal(this)">
+    <img src="cat.jpg" onclick="openModal(this)">
+    <img src="doberman.jpg" onclick="openModal(this)">
+</div>
+<br>
+<p style="font-size: 20px; margin-top: 50px;">I also like to travel, so I wanted to show you guys my pictures of the view in palawan, quezon province general nakar.</p>
+         <br>
+<div class="image-row">
+    <img src="palawan.jpg" onclick="openModal(this)">
+    <img src="palawan1.jpg" onclick="openModal(this)">
+    <img src="palawan2.jpg" onclick="openModal(this)">
+    <img src="palawan3.jpg" onclick="openModal(this)">
+    <img src="palawan4.jpg" onclick="openModal(this)">
+    <img src="sunshit.jpg" onclick="openModal(this)">
+    
+</div>
+    </section>
+
+
+
+
+    <footer>
+        <cite>&#169;2026 Static Website</cite>
+
+    </footer>
+ 
+<div id="imageModal" class="modal">
+<span class="close" onclick="closeModal()">&times;</span>
+<img id="modalImg">
+</div>
+
+
+
+
+
+</body>
+</html>
